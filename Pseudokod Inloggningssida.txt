@@ -1,0 +1,15 @@
+Pseudokod Inloggningssida
+
+funktion Logga In
+	låt userName vara login.username.value
+	låt password vara login.password.value
+	
+	om användarnamnet är lika med "test" och lösenordet är lika med "1234"
+		skriv ut "Du är nu inloggad!"
+		knapp "Logga ut"
+
+			funktion Logga ut
+				återgå till inloggningssida
+
+	annars
+		skriv ut "Användarnamn eller lösenord stämde inte, försök igen"
