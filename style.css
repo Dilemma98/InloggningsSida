@@ -14,6 +14,8 @@ h1{
 
 h2{
     font-size: 20px;
+    width: 250px;
+    margin: auto;
 }
 
 #inputForm{
@@ -21,7 +23,7 @@ h2{
     flex-direction: column;
     width: 200px;
     align-items: center;
-    margin-top: -20px;
+    margin: auto;
 }
 
 input{
