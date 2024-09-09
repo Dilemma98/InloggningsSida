@@ -6,7 +6,6 @@
     margin: auto;
     display: flex;
     flex-direction: row;
-
 }
 
 h1{
@@ -21,7 +20,7 @@ h2{
     text-align: center;
 }
 
-#inputForm{
+#inputField{
     display: flex;
     flex-direction: column;
     width: 200px;
