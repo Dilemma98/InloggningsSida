@@ -1,8 +1,38 @@
-#headerMenu {
+#root {
     width: 70%;
     background-color: aliceblue;
     padding: 2rem;
     margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+h1{
     font-family: 'Citylines', sans-serif;
-    font-size: 25px;
+    font-size: 40px;
+}
+
+h2{
+    font-size: 20px;
+}
+
+#inputForm{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    align-items: center;
+    margin-top: -20px;
+}
+
+input{
+    width: 150px;
+    margin-top: -15px;
+}
+
+#anvNamn, #anvLösen{
+    font-size: 15px;
+}
+
+button{
+    margin-top: 15px;
 }
