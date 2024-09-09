@@ -1,0 +1,22 @@
+låt h2 vara skapa element h2
+h2 innertext = "Varsågod att logga in"
+
+låt knapp vara skapa element knapp
+knapp innertext = "Logga in"
+
+låt inputAnvNamn vara skapa element input
+inputAnvNamn.bestämAttribut("type", "text")
+
+låt inputAnvLösen vara skapa element input
+inputAnvLösen.bestämAttribut("type", "password")
+
+låt username vara "test"
+låt password vara "1234"
+
+funktion Logga in
+	OM användarnamn och lösenord matchar
+		h2 innerHTML = "Välkommen in!"
+		knapp innerHTML = "Logga ut"
+	ANNARS
+		h2 innerHTML = "Fel inloggningsuppgifter!"
+		knapp innerHTML = "Testa igen."
