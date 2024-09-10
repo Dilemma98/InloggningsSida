@@ -13,6 +13,8 @@ let userPassword = "1234";
 let passwordInput = document.createElement("input");
 passwordInput.type = "password";
 passwordInput.placeholder = "Lösenord:";
+let loggedIn = false;
+const checkUser = localStorage.getItem("username");
 
 h2.innerText = "Varsågod att logga in.";
 
@@ -23,22 +25,28 @@ inputField.appendChild(button);
 root.appendChild(inputField);
 root.insertBefore(h2, inputField);
 
-let loggedIn = false;
+function LoggedIn() {
+  localStorage.setItem("username", userName);
+  h2.innerHTML = "Välkommen in!";
+  inputField.removeChild(usernameInput);
+  inputField.removeChild(passwordInput);
+  button.textContent = "Logga ut";
+  document.body.appendChild(h3);
+  loggedIn = true;
+}
+
+if (checkUser) {
+  LoggedIn();
+}
 
 button.addEventListener("click", () => {
   if (!loggedIn) {
     // Logga in
-    let result = usernameInput.value;
-    let result2 = passwordInput.value;
+    let userNameResult = usernameInput.value;
+    let userPasswordResult = passwordInput.value;
 
-    if (result == userName && result2 == userPassword) {
-      localStorage.setItem("username", userName);
-      h2.innerHTML = "Välkommen in!";
-      inputField.removeChild(usernameInput);
-      inputField.removeChild(passwordInput);
-      button.textContent = "Logga ut";
-      document.body.appendChild(h3);
-      loggedIn = true;
+    if (userNameResult == userName && userPasswordResult == userPassword) {
+      LoggedIn();
     } else {
       h2.innerHTML = "Användarnamn eller lösenord matchade inte. Försök igen";
       usernameInput.value = "";
