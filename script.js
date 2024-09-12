@@ -21,10 +21,11 @@ h2.innerText = "Varsågod att logga in.";
 inputField.appendChild(usernameInput);
 inputField.appendChild(passwordInput);
 inputField.appendChild(button);
-
 root.appendChild(inputField);
 root.insertBefore(h2, inputField);
 
+// Här skapar jag funktionen för den inloggade sidan. 
+//Denna kan jag sedan använda i mina olika if-satser
 function LoggedIn() {
   localStorage.setItem("username", userName);
   h2.innerHTML = "Välkommen in!";
@@ -35,16 +36,22 @@ function LoggedIn() {
   loggedIn = true;
 }
 
+//Här använder jag min variabel som kollar om användaren redan loggat in. 
+//Har den det kallar det på den inloggade sidan.
 if (checkUser) {
   LoggedIn();
 }
 
+//Här skapar jag funktionen för Logga in knappen. 
+//I denna finns olika if och else satser för de olika utfallen
 button.addEventListener("click", () => {
   if (!loggedIn) {
-    // Logga in
+    //Om användaren inte är inloggad sker if-en nedanför
     let userNameResult = usernameInput.value;
     let userPasswordResult = passwordInput.value;
 
+    //Här är villkoret att om användarnamn och lösenord stämmer med det hårkodade 
+    //användarnamn och lösenord så kallar det på funktionen för den inloggade sidan
     if (userNameResult == userName && userPasswordResult == userPassword) {
       LoggedIn();
     } else {
@@ -53,7 +60,9 @@ button.addEventListener("click", () => {
       passwordInput.value = "";
     }
   } else {
-    // Logga ut
+    // Här är koden för vad som händer om Logga ut knappen trycks på.
+    //Då rensas localStorage och användaren "skickas" tillbaka till
+    //inloggningssidan.
     localStorage.clear();
     document.body.removeChild(h3);
     h2.innerText = "Varsågod att logga in.";
